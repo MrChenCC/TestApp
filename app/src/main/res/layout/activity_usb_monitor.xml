@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".module.usbstorage.UsbMonitorActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/logTextView"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btn"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="清空日志"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/usb"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="获取挂载USB存储路径"
+                    app:layout_constraintBottom_toTopOf="@id/btn"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/scan"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="发广播通知系统重新扫描存储设备"
+                    app:layout_constraintBottom_toTopOf="@id/usb"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/cable"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="反射获取USB存储路径"
+                    app:layout_constraintBottom_toTopOf="@id/scan"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/unmount"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="卸载USB存储"
+                    app:layout_constraintBottom_toTopOf="@id/cable"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/mount"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="挂载USB存储"
+                    app:layout_constraintBottom_toTopOf="@id/unmount"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/allUsb"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="查询所有USB设备"
+                    app:layout_constraintBottom_toTopOf="@id/mount"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/initUSB"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="使用第三方库读取U盘"
+                    app:layout_constraintBottom_toTopOf="@id/allUsb"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/copyToLocal"
+                    android:layout_margin="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="复制U盘文件到本地"
+                    app:layout_constraintBottom_toTopOf="@id/initUSB"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="cn.cb.testapp.main.MainItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:id="@+id/item_main_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.title}"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hello World" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{item.desc}"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/item_main_title"
+            tools:text="Hello World" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
