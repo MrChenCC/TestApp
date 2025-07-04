@@ -11,6 +11,7 @@ import cn.cb.testapp.databinding.ActivityMainBinding
 import cn.cb.testapp.module.camera.DualCameraActivity
 import cn.cb.testapp.module.camera.MainJavaActivity
 import cn.cb.testapp.module.tts.MainTtsActivity
+import cn.cb.testapp.module.uploadprogress.UploadProgressActivity
 import cn.cb.testapp.module.usbstorage.UsbMonitorActivity
 import cn.cb.testapp.module.videovoice.VideoVoiceActivity
 
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         )
         itemList.add(
             MainItem("U盘监听", "通过广播（BroadcastReceiver）结合 UsbManager 来实现U盘监听", UsbMonitorActivity::class.java)
+        )
+        itemList.add(
+            MainItem("上传文件", "带进度条的上传文件", UploadProgressActivity::class.java)
         )
         binding.mainList.adapter = MyAdapter().apply {
             list.addAll(itemList)
