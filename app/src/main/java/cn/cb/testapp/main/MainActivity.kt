@@ -10,6 +10,7 @@ import cn.cb.testapp.R
 import cn.cb.testapp.databinding.ActivityMainBinding
 import cn.cb.testapp.module.camera.DualCameraActivity
 import cn.cb.testapp.module.camera.MainJavaActivity
+import cn.cb.testapp.module.netcamera.NetCameraActivity
 import cn.cb.testapp.module.tts.MainTtsActivity
 import cn.cb.testapp.module.uploadprogress.UploadProgressActivity
 import cn.cb.testapp.module.usbstorage.UsbMonitorActivity
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
         )
         itemList.add(
             MainItem("上传文件", "带进度条的上传文件", UploadProgressActivity::class.java)
+        )
+        itemList.add(
+            MainItem("网络摄像头", "局域网通过RTSP协议播放视频", NetCameraActivity::class.java)
         )
         binding.mainList.adapter = MyAdapter().apply {
             list.addAll(itemList)
