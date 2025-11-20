@@ -1,8 +1,8 @@
 package cn.cb.testapp.module.netcamera
-import android.net.Uri
 import android.os.Bundle
 import androidx.annotation.OptIn
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
@@ -16,7 +16,7 @@ class NetCameraActivity : AppCompatActivity() {
     private lateinit var playerView: PlayerView
 
     // 替换为你的摄像头 RTSP 地址
-    private val rtspUrl = "rtsp://admin:Bossien1@192.168.3.105:554/stream"
+    private val rtspUrl = "rtsp://admin:Bossien1@192.168.1.161:554/stream"
 
     @OptIn(UnstableApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class NetCameraActivity : AppCompatActivity() {
             playerView.player = exoPlayer
 
             val mediaItem = MediaItem.Builder()
-                .setUri(Uri.parse(rtspUrl))
+                .setUri(rtspUrl.toUri())
                 .setMimeType("application/x-rtsp") // 告诉 Media3 这是 RTSP
                 .build()
 

@@ -10,6 +10,7 @@ import cn.cb.testapp.R
 import cn.cb.testapp.databinding.ActivityMainBinding
 import cn.cb.testapp.module.camera.DualCameraActivity
 import cn.cb.testapp.module.camera.MainJavaActivity
+import cn.cb.testapp.module.info.InfoActivity
 import cn.cb.testapp.module.netcamera.NetCameraActivity
 import cn.cb.testapp.module.tts.MainTtsActivity
 import cn.cb.testapp.module.uploadprogress.UploadProgressActivity
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         )
         itemList.add(
             MainItem("网络摄像头", "局域网通过RTSP协议播放视频", NetCameraActivity::class.java)
+        )
+        itemList.add(
+            MainItem("设备信息", "包名、厂商、型号、序列号", InfoActivity::class.java)
         )
         binding.mainList.adapter = MyAdapter().apply {
             list.addAll(itemList)
